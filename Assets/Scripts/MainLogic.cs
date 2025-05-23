@@ -55,7 +55,7 @@ public class MainLogic : MonoBehaviour
         hp -= 1;
         Debug.Log($"HP: {hp}");
 
-        if (hp < 0)
+        if (hp <= 0)
         {
             ShowGameOverUI();
         }
@@ -92,6 +92,7 @@ public class MainLogic : MonoBehaviour
 
     private void ShowGameOverUI()
     {
+        Time.timeScale = 0f;
         GameObject goUI = Resources.Load<GameObject>("UI/GameOver");
         if (goUI != null)
         {
@@ -104,4 +105,16 @@ public class MainLogic : MonoBehaviour
 
         enabled = false;
     }
+
+    public void OnHeal()
+    {
+        hp += 1;
+        Debug.Log($"HP: {hp}");        
+    }
+
+    //public void OnSpeed()
+    //{
+    //    hp += 1;
+    //    Debug.Log($"HP: {hp}");
+    //}
 }

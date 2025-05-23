@@ -19,7 +19,7 @@ public class SpawnerClass : MonoBehaviour
             return;
         }
         
-        // start spawning npc when the game starts
+        // start spawning enemy when the game starts
         StartCoroutine(SpawnLoop());
     }
 

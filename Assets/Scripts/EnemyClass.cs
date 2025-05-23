@@ -45,6 +45,9 @@ public class EnemyClass : MonoBehaviour
             FindObjectOfType<MainLogic>()?.AddScore();
             isHit = true;
             StartCoroutine(FlashRedAndDestroy());
+        } else if (!isHit && other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
         }
     }
 

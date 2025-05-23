@@ -64,9 +64,13 @@ public class PlayerClass : MonoBehaviour
     // When collided with enemy, find MainLogic script to do damage to player
     private void OnTriggerEnter(Collider other)
     {
+       
         if (other.CompareTag("Enemy"))
         {
             FindObjectOfType<MainLogic>()?.GetDamage();
+        }else if (other.CompareTag("Item"))
+        {
+            other.GetComponent<IItem>().OnActivated();
         }
     }
 }
